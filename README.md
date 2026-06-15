@@ -1,10 +1,9 @@
 ## WPA2-Lab-Zero-Hardware: Containerized 4-Way Handshake & KRACK Attack Simulation
 
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8ca77c1d-271f-4d6e-9e47-f290990e9d58" alt="WPA2 Docker Lab Terminal" width="600" style="max-width: 100%; height: auto;" />
+  <img src="https://github.com/user-attachments/assets/8ca77c1d-271f-4d6e-9e47-f290990e9d58" alt="WPA2 Docker Lab Terminal" style="width: 80%; max-width: 700px; height: auto;" />
 </p>
-
-
 
 A fully containerized WPA2 security lab that demonstrates the IEEE 802.11i 4-way handshake using real `hostapd` and `wpa_supplicant` binaries running in isolated Docker containers, communicating over virtual 802.11 radios provided by `mac80211_hwsim`. The lab also includes a KRACK (CVE-2017-13077) attack demonstration using Mathy Vanhoef's original proof-of-concept scripts.
 
