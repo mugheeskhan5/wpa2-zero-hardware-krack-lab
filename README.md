@@ -72,8 +72,7 @@ For the KRACK demo, a third virtual radio `wlan2` is used by Mathy Vanhoef's mod
 │   └── results/              CSV output + failure artifacts (gitignored)
 ├── docs/
 │   ├── REPRODUCTION_GUIDE.md
-│   ├── KRACK_NOTES.md
-│
+│   └── KRACK_NOTES.md
 └── shared/                   runtime pcap/log exchange between containers
 ```
 
