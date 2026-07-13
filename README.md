@@ -192,6 +192,26 @@ sudo ~/krackattacks/krackattack/reenable-hwcrypto.sh
 ```
 
 ---
+## Automated Experiments
+
+The `harness/` directory contains three trial scripts for 
+running N-trial experiments unattended:
+
+| Script | Experiment | Default N |
+|---|---|---|
+| `harness/trial_handshake.sh` | WPA2/WPA3 handshake reliability | 100 |
+| `harness/trial_container_build.sh` | Cold-build reproducibility | 20 |
+| `harness/trial_krack.sh` | KRACK MSG3 replay resilience | 50 |
+
+Quick start:
+```bash
+./scripts/setup_interfaces.sh 3
+./harness/trial_handshake.sh 3 15 wpa2   # pilot run
+./harness/trial_handshake.sh 100 15 wpa2  # full run
+```
+
+Results are written to `harness/results/` as CSV files.
+
 
 ## Author
 
