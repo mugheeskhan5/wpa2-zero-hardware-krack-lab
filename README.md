@@ -1,4 +1,4 @@
-## WPA2-Lab-Zero-Hardware: Containerized 4-Way Handshake & KRACK Attack Simulation
+## WPA2-Lab-Zero-Hardware: Containerized & Automated 4-Way Handshake & KRACK Attack Simulation
 
 
 <p align="center">
