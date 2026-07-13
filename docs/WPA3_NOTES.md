@@ -242,5 +242,3 @@ Dragonblood mitigations by default.
 - IEEE Std 802.11-2020 (SAE-H2E specification).
 - J. Malinen, mac80211_hwsim kernel documentation:
   https://www.kernel.org/doc/html/latest/networking/mac80211_hwsim/
-EOF
-echo "WPA3_NOTES.md written"
