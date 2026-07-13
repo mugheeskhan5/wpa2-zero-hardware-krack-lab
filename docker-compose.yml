@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  ap:
+    build: ./ap
+    container_name: wpa2_ap
+    cap_add:
+      - NET_ADMIN
+      - SYS_RAWIO
+    network_mode: host
+    volumes:
+      - ./shared:/shared
+    environment:
+      - IFACE=wlan0
+      - PROTO=${PROTO:-wpa2}
+
+  client:
+    build: ./client
+    container_name: wpa2_client
+    cap_add:
+      - NET_ADMIN
+      - SYS_RAWIO
+    network_mode: host
+    volumes:
+      - ./shared:/shared
+    depends_on:
+      - ap
+    environment:
+      - IFACE=wlan1
+      - PROTO=${PROTO:-wpa2}
