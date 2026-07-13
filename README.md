@@ -46,28 +46,40 @@ For the KRACK demo, a third virtual radio `wlan2` is used by Mathy Vanhoef's mod
 ---
 
 ## Repository Structure
-
 ```
 .
-├── README.md                  This file
-├── docker-compose.yml          Defines the AP and client containers
+├── docker-compose.yml
 ├── ap/
 │   ├── Dockerfile
-│   ├── hostapd.conf
-│   └── start_ap.sh
+│   ├── hostapd.conf          WPA2-PSK
+│   ├── hostapd_wpa3.conf     WPA3-SAE
+│   └── start_ap.sh           selects config via $PROTO
 ├── client/
 │   ├── Dockerfile
-│   ├── wpa_supplicant.conf
-│   └── start_client.sh
+│   ├── wpa_supplicant.conf       WPA2-PSK
+│   ├── wpa_supplicant_wpa3.conf  WPA3-SAE
+│   └── start_client.sh           selects config via $PROTO
 ├── scripts/
-│   ├── analyzer.py              Python MIC/PTK/PMK verification tool
-│   ├── setup_interfaces.sh       Reload mac80211_hwsim and bring interfaces up
-│   ├── run_handshake.sh          Run the full handshake capture
-│   └── run_krack_demo.sh         Run the KRACK attack demonstration
-├── shared/                       Output directory for captures and logs (gitignored)
-└── docs/
-    ├── REPRODUCTION_GUIDE.md     Full step-by-step reproduction guide
-    └── KRACK_NOTES.md             KRACK attack background and result interpretation
+│   ├── analyzer.py           MIC/PTK verifier (--proto wpa2|wpa3, --json)
+│   ├── setup_interfaces.sh   reload mac80211_hwsim after reboot
+│   ├── run_handshake.sh      single manual handshake run
+│   └── run_krack_demo.sh     single manual KRACK demo
+├── harness/
+│   ├── lib_common.sh         shared helpers (timestamps, CSV, docker, wait)
+│   ├── trial_handshake.sh    N-trial handshake experiment
+│   ├── trial_container_build.sh  N-trial cold-rebuild experiment
+│   ├── trial_krack.sh        N-trial KRACK replay experiment
+│   └── results/              CSV output + failure artifacts (gitignored)
+├── docs/
+│   ├── REPRODUCTION_GUIDE.md
+│   ├── KRACK_NOTES.md
+│
+└── shared/                   runtime pcap/log exchange between containers
+```
+
+---
+
+└── KRACK_NOTES.md             KRACK attack background and result interpretation
 ```
 
 ---
