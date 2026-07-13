@@ -203,6 +203,20 @@ sudo ~/krackattacks/krackattack/reenable-hwcrypto.sh
 ```
 
 ---
+
+---
+
+## WPA3-SAE notes
+
+WPA3-SAE is supported out of the box on Ubuntu 22.04 (hostapd/wpa_supplicant
+v2.10 packages include SAE). The same container images handle both protocols
+via the `PROTO` env var. MIC verification in `analyzer.py` is skipped for
+WPA3 (`--proto wpa3`) since SAE derives the PMK from a per-session
+Diffie-Hellman exchange, not a static function of password+SSID — see
+`docs/WPA3_NOTES.md` for the full explanation.
+
+---
+
 ## Automated Experiments
 
 The `harness/` directory contains three trial scripts for 
