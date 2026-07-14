@@ -71,17 +71,12 @@ For the KRACK demo, a third virtual radio `wlan2` is used by Mathy Vanhoef's mod
 │   ├── trial_krack.sh        N-trial KRACK replay experiment
 │   └── results/              CSV output + failure artifacts (gitignored)
 ├── docs/
-│   ├── REPRODUCTION_GUIDE.md
-│   └── KRACK_NOTES.md
+│   ├── REPRODUCTION_GUIDE.md  KRACK attack background and result interpretation
+│   ├── KRACK_NOTES.md
+│   └── WPA3_NOTES.md 
 └── shared/                   runtime pcap/log exchange between containers
 ```
 
----
-
-└── KRACK_NOTES.md             KRACK attack background and result interpretation
-```
-
----
 
 ## Prerequisites
 
